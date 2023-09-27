@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://uxm75rl4lxf8"]
+
+[ext_resource type="Script" path="res://cube/cube.gd" id="1_b1uj2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0a1l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fghuk"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_f0a1l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_70vwx"]
+
+[node name="Cube" type="RigidBody3D"]
+mass = 5.0
+script = ExtResource("1_b1uj2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fghuk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_70vwx")
