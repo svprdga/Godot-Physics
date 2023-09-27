@@ -22,4 +22,5 @@ window/size/viewport_height=1080
 
 [physics]
 
-3d/physics_engine="GodotPhysics3D"
+3d/run_on_separate_thread=true
+3d/physics_engine="JoltPhysics3D"

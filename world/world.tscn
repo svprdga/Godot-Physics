@@ -83,10 +83,9 @@ offset_top = 20.0
 offset_right = 183.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 48
-text = "Ready..."
+text = "Press enter to start..."
 
 [node name="ControlTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 100, 0)
@@ -117,5 +116,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8s2ac")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, 0)
 script = ExtResource("3_ox5et")
 
+[connection signal="start_test" from="." to="SpownPoint" method="_on_world_start_test"]
 [connection signal="timeout" from="ControlTimer" to="." method="_on_control_timer_timeout"]
 [connection signal="instantiate_cube" from="SpownPoint" to="." method="_on_spawner_instantiate_cube"]

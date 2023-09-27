@@ -4,7 +4,11 @@ const MAX_TICKS = 60
 
 @onready var _label = $Control/Label
 @onready var _control_timer = $ControlTimer
+@onready var _spawn_point = $SpownPoint
 
+signal start_test
+
+var _is_running: bool = false
 var _cubes: int = 0
 var _fps: int = 0
 var _fps_list: Array = []
@@ -12,7 +16,12 @@ var _ticks: int = 0
 
 
 func _process(_delta: float) -> void:
-	_fps = Engine.get_frames_per_second()
+	if not _is_running and Input.is_action_just_pressed("ui_accept"):
+		_is_running = true
+		_control_timer.start()
+		emit_signal("start_test")
+	else:
+		_fps = Engine.get_frames_per_second()
 
 
 func _on_spawner_instantiate_cube() -> void:

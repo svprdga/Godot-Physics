@@ -8,11 +8,19 @@ signal instantiate_cube
 var _elapsed_time: float = 0.0
 
 
+func _ready() -> void:
+	set_process(false)
+
+
 func _process(delta: float) -> void:
 	_elapsed_time += delta
 	if _elapsed_time >= TIMER_INTERVAL:
 		_elapsed_time = 0.0
 		_instantiate_cube()
+
+
+func _on_world_start_test():
+	set_process(true)
 
 
 func _instantiate_cube():
