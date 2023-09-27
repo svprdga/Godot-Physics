@@ -15,6 +15,11 @@ run/main_scene="res://world/world.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [physics]
 
 3d/physics_engine="GodotPhysics3D"
