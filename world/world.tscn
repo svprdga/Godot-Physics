@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccdcouvr2vp83"]
+[gd_scene load_steps=13 format=3 uid="uid://ccdcouvr2vp83"]
 
 [ext_resource type="Script" path="res://world/world.gd" id="1_83su8"]
 [ext_resource type="ArrayMesh" uid="uid://b64hrqlhtta0y" path="res://scenario/scenario.obj" id="2_x31px"]
+[ext_resource type="Script" path="res://world/camera.gd" id="2_xfilt"]
 [ext_resource type="Script" path="res://spawn_point/spawn_point.gd" id="3_ox5et"]
 
 [sub_resource type="Animation" id="Animation_b3riu"]
@@ -69,6 +70,7 @@ libraries = {
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-3.79191e-08, 0.497458, -0.867488, 2.17446e-08, 0.867488, 0.497458, 1, -2.13163e-14, -4.37114e-08, -90.0908, 55.2505, 0)
 fov = 65.5
+script = ExtResource("2_xfilt")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -83,7 +85,7 @@ offset_top = 20.0
 offset_right = 183.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 48
-text = "Press enter to start..."
+text = "Press enter to start or M to enter movement mode..."
 
 [node name="ControlTimer" type="Timer" parent="."]
 
