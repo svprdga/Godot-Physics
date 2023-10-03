@@ -1,7 +1,6 @@
 extends Node3D
 
-#const TIMER_INTERVAL = 0.01
-const TIMER_INTERVAL = 1.0
+const TIMER_INTERVAL = 0.01
 
 signal instantiate_cube
 
@@ -57,7 +56,7 @@ func _instantiate_cube():
 	PhysicsServer3D.body_set_shape_transform(cube, 0, Transform3D(Basis.IDENTITY, Vector3.ZERO))
 	
 	# Set transform
-	var transform = Transform3D(Basis.IDENTITY, position)
+	var transform = Transform3D(_random_rotation(), position)
 	PhysicsServer3D.body_set_state(cube, PhysicsServer3D.BODY_STATE_TRANSFORM, transform)
 	
 	# Add mesh
@@ -73,3 +72,9 @@ func _instantiate_cube():
 	
 	# Add the material to the cube
 	RenderingServer.instance_set_surface_override_material(mesh, 0, cube_material)
+	
+	
+func _random_rotation() -> Basis:
+	var axis = Vector3(randf(), randf(), randf()).normalized()
+	var angle = randf() * 2 * PI
+	return Basis().rotated(axis, angle)
