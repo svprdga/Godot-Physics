@@ -56,7 +56,7 @@ func _instantiate_cube():
 	PhysicsServer3D.body_set_shape_transform(cube, 0, Transform3D(Basis.IDENTITY, Vector3.ZERO))
 	
 	# Set transform
-	var transform = Transform3D(_random_rotation(), position)
+	var transform = Transform3D(_random_rotation(), Vector3(0.0, 70.0, 0.0))
 	PhysicsServer3D.body_set_state(cube, PhysicsServer3D.BODY_STATE_TRANSFORM, transform)
 	
 	# Add mesh
