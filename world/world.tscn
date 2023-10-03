@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/world.gd" id="1_83su8"]
 [ext_resource type="ArrayMesh" uid="uid://b64hrqlhtta0y" path="res://scenario/scenario.obj" id="2_x31px"]
 [ext_resource type="Script" path="res://world/camera.gd" id="2_xfilt"]
-[ext_resource type="Script" path="res://spawn_point/spawn_point.gd" id="3_ox5et"]
+[ext_resource type="Script" path="res://spawn_point/physics_server_point.gd" id="4_er5bm"]
 
 [sub_resource type="Animation" id="Animation_b3riu"]
 length = 0.001
@@ -116,7 +116,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8s2ac")
 
 [node name="SpownPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, 0)
-script = ExtResource("3_ox5et")
+script = ExtResource("4_er5bm")
 
 [connection signal="start_test" from="." to="SpownPoint" method="_on_world_start_test"]
 [connection signal="timeout" from="ControlTimer" to="." method="_on_control_timer_timeout"]
