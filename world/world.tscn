@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/world.gd" id="1_83su8"]
 [ext_resource type="ArrayMesh" uid="uid://b64hrqlhtta0y" path="res://scenario/scenario.obj" id="2_x31px"]
 [ext_resource type="Script" path="res://world/camera.gd" id="2_xfilt"]
-[ext_resource type="Script" path="res://spawn_point/physics_server_point.gd" id="4_er5bm"]
+[ext_resource type="Script" path="res://spawn_point/SpawnPoint.cs" id="4_v4jc5"]
 
 [sub_resource type="Animation" id="Animation_b3riu"]
 length = 0.001
@@ -114,10 +114,10 @@ shape = SubResource("ConcavePolygonShape3D_2x75b")
 mesh = ExtResource("2_x31px")
 surface_material_override/0 = SubResource("StandardMaterial3D_8s2ac")
 
-[node name="SpownPoint" type="Node3D" parent="."]
+[node name="SpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, 0)
-script = ExtResource("4_er5bm")
+script = ExtResource("4_v4jc5")
 
-[connection signal="start_test" from="." to="SpownPoint" method="_on_world_start_test"]
+[connection signal="start_test" from="." to="SpawnPoint" method="OnWorldStartTest"]
 [connection signal="timeout" from="ControlTimer" to="." method="_on_control_timer_timeout"]
-[connection signal="instantiate_cube" from="SpownPoint" to="." method="_on_spawner_instantiate_cube"]
+[connection signal="InstantiateCube" from="SpawnPoint" to="." method="_on_spawner_instantiate_cube"]

@@ -12,13 +12,17 @@ config_version=5
 
 config/name="godot_4_physics"
 run/main_scene="res://world/world.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[dotnet]
+
+project/assembly_name="godot_4_physics"
 
 [input]
 
